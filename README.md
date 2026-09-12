@@ -4,7 +4,7 @@
 
 它共用一套观察与核验方法，风光、人像、街头、建筑、花卉动物、夜景可以走不同路线。同一题材也有多种候选，不用一组参数处理所有照片。
 
-[GitHub](https://github.com/zihaoyan1023-ai/ps-auto-color) · [Gitee](https://gitee.com/aholic666/ps-auto-color) · [技能入口](skills/ps-auto-color/SKILL.md)
+[GitHub](https://github.com/zihaoyan1023-ai/ps-auto-color) · Gitee 镜像待发布 · [技能入口](skills/ps-auto-color/SKILL.md)
 
 ## 实操对比
 
@@ -33,17 +33,13 @@
 
 ## 安装与调用
 
-从任意一个仓库下载代码或克隆，两个地址提供同一项目：
+从 GitHub 下载代码或克隆：
 
 ```sh
 git clone https://github.com/zihaoyan1023-ai/ps-auto-color.git
 ```
 
-国内可改用：
-
-```sh
-git clone https://gitee.com/aholic666/ps-auto-color.git
-```
+Gitee 镜像尚未发布，完成平台账号安全验证后再提供可用地址。
 
 将仓库中的 `skills/ps-auto-color` 文件夹复制到当前 Codex 支持的技能目录。按 [OpenAI 官方技能文档](https://learn.chatgpt.com/docs/build-skills)，个人技能可放在 `~/.agents/skills/ps-auto-color`，项目技能可放在该项目的 `.agents/skills/ps-auto-color`。同名技能已存在时先保留旧版，再进行有意识的替换；不要重复安装到多个扫描位置。也可让 `$skill-installer` 从本仓库的 `skills/ps-auto-color` 路径安装。若未被发现，重启 Codex 并检查当前版本支持的目录。
 
@@ -94,7 +90,7 @@ skills/ps-auto-color/
 assets/                       本仓库的展示截图
 ```
 
-欢迎在任一仓库提交具体问题：使用环境、照片题材、操作阶段、可观察到的问题与期望。分享示例前确认有权公开；不要提交凭据、私人路径、原始核验日志或未授权照片。
+欢迎通过 GitHub Issues 提交具体问题：使用环境、照片题材、操作阶段、可观察到的问题与期望。分享示例前确认有权公开；不要提交凭据、私人路径、原始核验日志或未授权照片。
 
 ## 许可与来源
 
