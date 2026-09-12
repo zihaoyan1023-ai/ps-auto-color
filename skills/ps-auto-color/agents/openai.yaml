@@ -1,0 +1,4 @@
+interface:
+  display_name: "ps自动调色"
+  short_description: "在本地 Camera Raw 中按题材与光线选风格、默认降噪并复核成片"
+  default_prompt: "请用 $ps-auto-color 根据选定照片的题材、光线和我的偏好选择风格，在本地 Camera Raw 中默认 AI 降噪，调色复审后保存独立成片。"
