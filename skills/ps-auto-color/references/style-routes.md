@@ -1,5 +1,7 @@
 # 按照片选择调色路线
 
+本表保留独立安装时的基础路线。同级有 `photo-aesthetics` 时，使用其 [场景路线](../../photo-aesthetics/references/scene-routes.md)、[人像与 Cosplay 路线](../../photo-aesthetics/references/portrait-routes.md) 或 [延时路线](../../photo-aesthetics/references/temporal-routes.md) 细化条件、取舍和反例；不把两张路线表依次机械执行。
+
 共用观察、明暗与白平衡判断、质量复核的方法；不同照片可以有不同风格。下面的分类与路线是设计建议，不是预设，也不代表已通过跨题材实图验证。执行范围服从当前请求与会话授权；实际照片调整仍仅在本地 CR 完成。
 
 ## 共同选路，逐图决定

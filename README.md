@@ -4,7 +4,7 @@
 
 它共用一套观察与核验方法，风光、人像、街头、建筑、花卉动物、夜景可以走不同路线。同一题材也有多种候选，不用一组参数处理所有照片。
 
-[GitHub](https://github.com/zihaoyan1023-ai/ps-auto-color) · [Gitee](https://gitee.com/aholic666/ps-auto-color) · [技能入口](skills/ps-auto-color/SKILL.md)
+[GitHub](https://github.com/zihaoyan1023-ai/ps-auto-color) · [Gitee](https://gitee.com/aholic666/ps-auto-color) · [调色技能](skills/ps-auto-color/SKILL.md) · [通用摄影审美](skills/photo-aesthetics/SKILL.md)
 
 ## 实操对比
 
@@ -15,7 +15,8 @@
 ## 能做什么
 
 - 先理解当前显影、已有裁切与蒙版，建立可恢复的工作起点，再续修。
-- 按题材、天气、光线和用户偏好选择路线；包含六类题材、十九条候选路线。
+- 按题材、天气、光线和用户偏好选择路线；同级安装 `photo-aesthetics` 后默认使用其审美规划与复核，原有六类题材、十九条基础路线作为独立安装时的后备。
+- 通用审美覆盖风光、街拍、人像、Cosplay、建筑、静物、时尚、舞台与延时；输出区域和视觉关系，再由调色流程执行。
 - 对支持的 RAW 默认启用并检查 AI 降噪；强度随纹理与画面调整。
 - 通过白平衡、明暗、曲线、HSL／Point Color、色彩分级和局部蒙版解决实际问题。
 - 每组调整后看图，完整复审并进行针对性的第二遍检查。
@@ -31,6 +32,8 @@
 
 普通 SDR JPEG 的初始默认值为质量 12、sRGB、8 位、不缩放、不额外输出锐化；用途和用户要求优先。没有固定裁切比例。文件核验通过不等于用户已经满意。
 
+通用审美部分采用摄影师一手资料、实际查看的少量原作及公开审美项目思路的独立归纳，来源保留在参考文件中。它不包含第三方图片、模型权重或生成式修图后端，也不表示 ArtiMuse 等模型已经接入。延时部分提供关键阶段的表达与验收原则，尚未实现序列插值和去闪；静帧建议不等于整段视频已通过。Skill 结构检查和只读看图试用不能证明实际修后更好看。
+
 ## 安装与调用
 
 从 GitHub 或 Gitee 下载代码，或任选一个地址克隆：
@@ -44,6 +47,8 @@ git clone https://gitee.com/aholic666/ps-auto-color.git
 ```
 
 将仓库中的 `skills/ps-auto-color` 文件夹复制到当前 Codex 支持的技能目录。按 [OpenAI 官方技能文档](https://learn.chatgpt.com/docs/build-skills)，个人技能可放在 `~/.agents/skills/ps-auto-color`，项目技能可放在该项目的 `.agents/skills/ps-auto-color`。同名技能已存在时先保留旧版，再进行有意识的替换；不要重复安装到多个扫描位置。也可让 `$skill-installer` 从本仓库的 `skills/ps-auto-color` 路径安装。若未被发现，重启 Codex 并检查当前版本支持的目录。
+
+建议将仓库中的 `skills/photo-aesthetics` 也复制到同一个技能目录，与 `ps-auto-color` 同级。两者齐备时，实际调色默认使用通用审美，无需用户额外点名：调整前确定视觉目标，调整后据此复核；续修沿用有效方案。只安装 `ps-auto-color` 时会说明共用审美未加载，并使用原有基础路线继续。`photo-aesthetics` 也能独立做看图规划，不依赖 Photoshop。若使用安装器，分别选择这两个技能文件夹即可。
 
 调用示例（替换为自己的实际路径）：
 
@@ -60,6 +65,12 @@ git clone https://gitee.com/aholic666/ps-auto-color.git
 
 ```text
 请用 $ps-auto-color 只分析这组参考图的颜色与明暗关系，暂不操作照片。
+```
+
+```text
+请用 $photo-aesthetics 分析这组风光、街拍或 Cosplay 照片，
+根据光线和表达选择风格，说明具体区域怎样调整及应保留什么。
+先分析，不修改照片。
 ```
 
 ## 文件核验脚本
@@ -89,6 +100,13 @@ skills/ps-auto-color/
   references/ui-reliability.md 界面状态与恢复
   references/verification.md   保存与核验
   scripts/inspect_photo.py     只读文件检查
+skills/photo-aesthetics/
+  SKILL.md                     通用审美规划与编辑交接
+  agents/openai.yaml           技能显示信息
+  references/scene-routes.md   风光、街拍、建筑与静物
+  references/portrait-routes.md 人像、Cosplay、舞台与时尚
+  references/temporal-routes.md 延时与时间一致性
+  references/reference-and-review.md 参考迁移、喜好与外部评价
 assets/                       本仓库的展示截图
 ```
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "摄影审美与风格规划"
+  short_description: "按题材、光线与表达规划摄影风格，支持调色、人像及延时审美复核"
+  default_prompt: "请用 $photo-aesthetics 分析选定照片的题材、光线与表达，选出合适的风格，说明需要强化和保留的视觉关系，并交给本次已授权的修图流程执行。"
